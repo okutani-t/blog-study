@@ -22,8 +22,8 @@ $(function() {
                 type: "POST",
                 data: {
                     name: name,
-                    phone: phone,
                     email: email,
+                    phone: phone,
                     message: message
                 },
                 cache: false,
@@ -33,7 +33,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>メールが送信されました。勉強会当日お会いできることを楽しみにしてます！</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 

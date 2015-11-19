@@ -1,11 +1,14 @@
 @import "variables.less";
 @import "mixins.less";
-
+ 
 // Global Components
 
 body {
     overflow-x: hidden;
     .body-font;
+    color: #434343;
+    letter-spacing: 1px;
+    line-height: 1.6;
 }
 
 .text-muted {
@@ -15,6 +18,41 @@ body {
 .text-primary {
     color: @brand-primary;
 }
+
+.twitter-color {
+    color: @twitter-color;
+}
+
+.facebook-color {
+    color: @facebook-color;
+}
+
+/*margin*/
+.m0 { margin: 0 }
+.m3 { margin: 3px }
+.m5 { margin: 5px }
+.m10 { margin: 10px }
+.m15 { margin: 15px }
+.m20 { margin: 20px }
+.m30 { margin: 30px }
+
+.mt0 { margin-bottom: 0 }
+.mt3 { margin-top: 3px }
+.mt5 { margin-top: 5px }
+.mt10 { margin-top: 10px }
+.mt15 { margin-top: 15px }
+.mt20 { margin-top: 20px }
+.mt30 { margin-top: 30px }
+
+.mb0{ margin-bottom: 0 }
+.mb3 { margin-bottom: 3px }
+.mb5 { margin-bottom: 5px }
+.mb10 { margin-bottom: 10px }
+.mb15 { margin-bottom: 15px }
+.mb20 { margin-bottom: 20px }
+.mb30 { margin-bottom: 30px }
+
+.w20p { width: 20% }
 
 p {
     font-size: 16px;
@@ -34,14 +72,14 @@ a.active {
 }
 
 a {
-    color: @brand-primary;
+    color: @brand-danger;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: darken(@brand-primary, 10%);
+    color: darken(@brand-danger, 10%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,13 +91,15 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
-.bg-light-gray {
-    background-color: @gray-lighter;
+.bg-color {
+    background-color: @bg-color;;
 }
 
 .bg-darkest-gray {
     background-color: @gray-darkest;
 }
+
+.vmiddle { vertical-align: middle !important }
 
 // Restyled Primary Buttons
 
@@ -79,14 +119,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Custom Navigation Bar
-
 .navbar-default {
     background-color: @gray-darkest;
     border-color: transparent;
     .navbar-brand {
 	color: @brand-primary;
-	// .script-font;
-        .kokoro-font;
+        .cabin-font;
         &:hover,
         &:focus,
         &:active,
@@ -148,10 +186,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media(min-width:768px) {
     .table-layout {
-        font-size: 17px;
+        font-size: 15px;
         padding: 0 150px;
         th, td {
-            padding: 12px 8px !important;
+            padding: 20px !important;
         }
     }
 }
@@ -184,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: url('../img/head-bg.jpg');
+    background-image: url('../img/header.jpg');
     background-repeat: none;
     background-attachment: scroll;
     background-position: center center;
@@ -195,18 +233,18 @@ header {
 	padding-top: 100px;
 	padding-bottom: 50px;
 	.intro-lead-in {
-	    .hannari-font;
-	    font-size: 17px;
-	    line-height: 17px;
+	    .logotype-font;
+	    font-size: 16px;
+	    line-height: 16px;
 	    margin-bottom: 35px;
-            color: #eee;
-            text-shadow: 1px 1px 1px #000, -1px -1px 1px #333;
+            color: @bg-color;
+            text-shadow: 1px 1px 1px #555, -1px -1px 1px #555;
 	}
 	.intro-heading {
-	    .hannari-font;
+	    .cabin-font;
 	    font-weight: normal;
-	    font-size: 55px;
-	    line-height: 55px;
+	    font-size: 70px;
+	    line-height: 70px;
 	    margin-bottom: 25px;
             text-shadow: 0 0 20px #000;
 	}
@@ -219,16 +257,16 @@ header {
 	    padding-top: 300px;
 	    padding-bottom: 200px;
 	    .intro-lead-in {
-		.serif-font;
-		font-size: 20px;
-		line-height: 20px;
+		.logotype-font;
+		font-size: 22px;
+		line-height: 22px;
 		margin-bottom: 100px;
 	    }
 	    .intro-heading {
-		.heading-font;
+		.cabin-font;
 		font-weight: 700;
-		font-size: 75px;
-		line-height: 75px;
+		font-size: 90px;
+		line-height: 90px;
 		margin-bottom: 50px;
 	    }
 	}
@@ -241,6 +279,7 @@ section {
     padding: 100px 0;
     h2.section-heading {
 	font-size: 40px;
+        .cabin-font;
 	margin-top: 0;
 	margin-bottom: 15px;
     }
@@ -249,7 +288,7 @@ section {
     }
     h3.section-subheading {
 	font-size: 16px;
-	.serif-font;
+	.body-font;
 	text-transform: none;
 	font-style: italic;
 	font-weight: 400;
@@ -331,7 +370,7 @@ section {
         	margin: 0;
             }
             p {
-        	.serif-font;
+        	.body-font;
         	font-style: italic;
         	font-size: 16px;
         	margin: 0;
@@ -633,7 +672,7 @@ aside.clients {
 
 // Contact Section
 
-section#contact {
+section#subscribe {
     background-color: #fff;
     background-image: url('../img/map-image.jpg');
     background-position: center center;
